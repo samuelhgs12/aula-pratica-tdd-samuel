@@ -29,6 +29,11 @@ class Aluno:
         if self.calcular_media() >= 6.0:
             return "Aprovado por média"
         return "Reprovado por média"
+    
+    def enviar_boletim(self, email_service_mock):
+        if self.situacao() == "Reprovado":
+            email_service_mock.enviar_email(self.nome, self.calcular_media())
+       
 
 def contar_aprovados(lista_de_alunos: list) -> int:
     return sum(1 for aluno in lista_de_alunos if aluno.situacao() == "Aprovado")
