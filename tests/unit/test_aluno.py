@@ -94,3 +94,13 @@ def test_enviar_boletim_email_aluno_reprovado():
     
     # Verifica se o método de envio foi chamado com os parâmetros corretos
     email_service_mock.assert_called_once_with("Fernanda", 4.0)
+
+def test_nao_enviar_boletim_email_aluno_aprovado():
+    aluno = Aluno(nome = "Ricardo", notas = [10, 8, 9], faltas = 2)
+    email_service_mock = MagicMock()
+    
+    # Simula o envio do boletim
+    aluno.enviar_boletim(email_service_mock)
+    
+    # Verifica se o método de envio NÃO foi chamado
+    email_service_mock.assert_not_called()
