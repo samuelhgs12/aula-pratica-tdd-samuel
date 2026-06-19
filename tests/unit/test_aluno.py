@@ -60,6 +60,10 @@ def test_contar_mistos():
         Aluno(nome = "Maria", notas = [10, 10, 3], faltas = 2)
     ]
     assert contar_aprovados(alunos) == 2
+
+def test_contar_lista_vazia():
+    alunos = []
+    assert contar_aprovados(alunos) == 0
 # Requisito 2 — situacao_final(total_aulas) -> str
 # Escreva os testes ANTES de implementar o método
 
