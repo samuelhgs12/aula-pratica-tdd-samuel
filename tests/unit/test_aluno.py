@@ -2,6 +2,7 @@ import pytest
 from unittest.mock import MagicMock
 from aluno.aluno import Aluno
 from aluno.aluno import contar_aprovados
+from aluno.aluno import situacao_final
 
 # =============================================================
 # PARTE 1 — Encontre os bugs
@@ -66,6 +67,9 @@ def test_contar_lista_vazia():
     assert contar_aprovados(alunos) == 0
 # Requisito 2 — situacao_final(total_aulas) -> str
 # Escreva os testes ANTES de implementar o método
+def test_situacao_final_reprovado_com_faltas():
+    aluno = Aluno(nome = "Lucas", notas = [7, 8, 9], faltas = 20)
+    assert aluno.situacao_final(total_aulas=40) == "Reprovado"
 
 
 # Requisito 3 — enviar_boletim(email_service)
