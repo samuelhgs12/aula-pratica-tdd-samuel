@@ -22,6 +22,10 @@ def test_menor_nota():
 def test_maior_nota():
     aluno = Aluno(nome = "Gustavo", notas = [2, 4, 9], faltas = 8)
     assert aluno.maior_nota() == 9
+
+def test_calcular_media_arredondada():
+    aluno = Aluno(nome = "José", notas = [5, 6, 6, 6], faltas = 4)
+    assert aluno.calcular_media_arredondada() == 6
 # =============================================================
 # PARTE 2 — Implemente com TDD
 # Siga o ciclo: 🔴 escreva o teste → 🟢 implemente → 🟡 refatore
