@@ -69,12 +69,15 @@ def test_contar_lista_vazia():
 # Escreva os testes ANTES de implementar o método
 def test_situacao_final_reprovado_com_faltas():
     aluno = Aluno(nome = "Lucas", notas = [7, 8, 9], faltas = 20)
-    assert aluno.situacao_final(total_aulas=40) == "Reprovado"
+    assert aluno.situacao_final(total_aulas=40) == "Reprovado por faltas"
 
 def test_situacao_final_aprovado():
     aluno = Aluno(nome = "Ana", notas = [7, 8, 9], faltas = 10)
-    assert aluno.situacao_final(total_aulas=40) == "Aprovado"
+    assert aluno.situacao_final(total_aulas=40) == "Aprovado por média"
 
+def test_situacao_final_reprovado_com_media_baixa():
+    aluno = Aluno(nome = "Carlos", notas = [4, 5, 4], faltas = 5)
+    assert aluno.situacao_final(total_aulas=40) == "Reprovado por média"
 # Requisito 3 — enviar_boletim(email_service)
 # Use MagicMock para simular o serviço de e-mail
 # Escreva os testes ANTES de implementar o método
