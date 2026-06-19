@@ -2,7 +2,6 @@ import pytest
 from unittest.mock import MagicMock
 from aluno.aluno import Aluno
 from aluno.aluno import contar_aprovados
-from aluno.aluno import situacao_final
 
 # =============================================================
 # PARTE 1 — Encontre os bugs
