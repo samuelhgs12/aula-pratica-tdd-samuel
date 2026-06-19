@@ -15,6 +15,13 @@ def test_situacao_aluno_aprovado():
     aluno = Aluno(nome = "Paulo", notas = [7, 4, 7], faltas = 1)
     assert aluno.situacao() == "Aprovado"
 
+def test_menor_nota():
+    aluno = Aluno(nome = "Gustavo", notas = [2, 4, 9], faltas = 8)
+    assert aluno.menor_nota() == 2
+
+def test_maior_nota():
+    aluno = Aluno(nome = "Gustavo", notas = [2, 4, 9], faltas = 8)
+    assert aluno.maior_nota() == 9
 # =============================================================
 # PARTE 2 — Implemente com TDD
 # Siga o ciclo: 🔴 escreva o teste → 🟢 implemente → 🟡 refatore
