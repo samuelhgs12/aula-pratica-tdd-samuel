@@ -71,6 +71,9 @@ def test_situacao_final_reprovado_com_faltas():
     aluno = Aluno(nome = "Lucas", notas = [7, 8, 9], faltas = 20)
     assert aluno.situacao_final(total_aulas=40) == "Reprovado"
 
+def test_situacao_final_aprovado():
+    aluno = Aluno(nome = "Ana", notas = [7, 8, 9], faltas = 10)
+    assert aluno.situacao_final(total_aulas=40) == "Aprovado"
 
 # Requisito 3 — enviar_boletim(email_service)
 # Use MagicMock para simular o serviço de e-mail
