@@ -15,6 +15,10 @@ def test_situacao_aluno_aprovado():
     aluno = Aluno(nome = "Paulo", notas = [7, 4, 7], faltas = 1)
     assert aluno.situacao() == "Aprovado"
 
+def test_situacao_aluno_reprovado():
+    aluno = Aluno(nome = "Maria", notas = [5, 4, 3], faltas = 2)
+    assert aluno.situacao() == "Reprovado"
+
 def test_menor_nota():
     aluno = Aluno(nome = "Gustavo", notas = [2, 4, 9], faltas = 8)
     assert aluno.menor_nota() == 2
